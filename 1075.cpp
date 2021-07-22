@@ -17,12 +17,13 @@ int main()
     }
     result = n % 100;
 
-    if(n<0) 
+    
+    if(result<10) 
     {
-        cout << "0" << n << endl;
+        cout << "0" << result << endl;
     }
     else    
-        cout << n << endl;
+        cout << result << endl;
 
     return 0;
 }
