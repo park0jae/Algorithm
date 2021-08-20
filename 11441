@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    cin.tie(NULL);
+
+    int n,m;
+    scanf("%d",&n);
+
+    int score[100001] = { 0, };
+    int a;
+    int re_score[100001] = { 0, };
+
+    int i,j;
+
+    for(int t=1; t<=n; t++)
+    {
+        scanf("%d",&a);
+        score[t] = a+score[t-1];
+    } 
+    cin >> m;
+ 
+    for(int k=1; k<=m; k++){
+        
+        scanf("%d %d",&i,&j);
+
+        re_score[k] = score[j] - score[i-1]; 
+    }
+
+    for(int k=1; k<=m; k++)
+    {
+        printf("%d\n", re_score[k]);
+    }
+     
+    return 0;
+}
