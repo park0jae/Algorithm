@@ -1,0 +1,11 @@
+-- 2022년 10월 5일에 등록된 게시물의 정보 출력하기 
+-- 거래상태가 SALE이면 판매중, RESERVED면 예약중, DONE이면 거래완료 분류 출력 
+-- 게시글 ID 기준 내림차순 정렬 
+SELECT UGB.BOARD_ID, UGB.WRITER_ID, UGB.TITLE, UGB.PRICE, 
+    CASE WHEN UGB.STATUS = 'SALE' THEN '판매중'
+    WHEN UGB.STATUS = 'RESERVED' THEN '예약중'
+    ELSE '거래완료'
+    END AS STATUS
+FROM USED_GOODS_BOARD UGB
+WHERE CREATED_DATE = '2022-10-05'
+ORDER BY BOARD_ID DESC;
